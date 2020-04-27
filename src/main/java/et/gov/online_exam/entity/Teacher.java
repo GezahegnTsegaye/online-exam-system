@@ -1,6 +1,5 @@
 package et.gov.online_exam.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,15 +13,12 @@ import lombok.NoArgsConstructor;
 @Table
 @AllArgsConstructor
 @NoArgsConstructor
-public @Data class Course {
+public @Data class Teacher {
 	
+
 	@Id
 	@GeneratedValue
 	private Long courseId;
 	
-	@Column
-	private String courseName;
-	
-	private Teacher teacher;
 
 }

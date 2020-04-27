@@ -1,5 +1,6 @@
 package et.gov.online_exam.entity;
 
+import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,15 +15,18 @@ import lombok.NoArgsConstructor;
 @Table
 @AllArgsConstructor
 @NoArgsConstructor
-public @Data class Course {
+public @Data class Student {
 	
 	@Id
 	@GeneratedValue
-	private Long courseId;
+	private Long studentId;
 	
 	@Column
-	private String courseName;
+	private String firstName;
 	
-	private Teacher teacher;
+	@Column
+	private String lastName;
+	
+	
 
 }
