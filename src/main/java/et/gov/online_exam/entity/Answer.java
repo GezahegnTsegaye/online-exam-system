@@ -13,36 +13,25 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Entity
 @Table
-@AllArgsConstructor
 @NoArgsConstructor
-public @Data class Question {
-
+@AllArgsConstructor
+public @Data class Answer {
+	
 	
 	@Id
 	@GeneratedValue
-	private Long questionId;
+	private Long answerId;
 	
 	
-	
-	@Column
-	private Integer numberOfPages;
-	
-	
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "examId")
-    private Exam exam;
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
+    private Question question;
     @Column
-    private String name;
-    @Column(name = "MULTI_ANSWER", nullable = false)
-    private boolean multiAnswer = false;
+    private String name; // answer
+    @Column(name = "IS_CORRECT", nullable = false)
+    private boolean correct = false; // is correct answer
 	
-	
-	
-	
-	
-	
-	
+
 }
