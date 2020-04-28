@@ -9,7 +9,7 @@ public interface ExamService {
 
 	Exam getRandomExam();
 
-	long insertExam(Exam exam);
+ Exam insertExam(Exam exam);
 
 	List<Question> getQuestionsForExam(int examId);
 

@@ -2,6 +2,7 @@ package et.gov.online_exam.examServices.impl;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -13,10 +14,12 @@ import org.springframework.stereotype.Service;
 
 import et.gov.online_exam.entity.Answer;
 import et.gov.online_exam.entity.Exam;
+import et.gov.online_exam.entity.ExamQuestion;
 import et.gov.online_exam.entity.Question;
 import et.gov.online_exam.entity.User;
 import et.gov.online_exam.examServices.ExamService;
 import et.gov.online_exam.repository.AnswerRepository;
+import et.gov.online_exam.repository.ExamQuestionRepository;
 import et.gov.online_exam.repository.ExamRepository;
 import et.gov.online_exam.repository.ExamReviewerRepository;
 import et.gov.online_exam.repository.QuestionRepository;
@@ -34,7 +37,7 @@ public class ExamServiceImpl implements ExamService {
 	private AnswerRepository answerRepository;
 
 	@Autowired
-	private ExamReviewerRepository examReviewerRepository;
+	private ExamQuestionRepository examQuestionRepository;
 
 	public static final double MAX_GRADE = 100; // 100 points
 
@@ -43,43 +46,44 @@ public class ExamServiceImpl implements ExamService {
 		final int examCount = (int) examRepository.count();
 		assert examCount > 0;
 		final int examNumber = new Random().nextInt(examCount);
-		return examRepository.findAll().g;
+		
+		Exam exam = new Exam();
+		exam.setExamCode(Integer.valueOf(examNumber).toString());
+		return exam;
 	}
 
 	@Override
 	@Transactional
-	public long insertExam(Exam exam) {
-		Long[] ids = exam.getIds();
-		
-		final Exam p = examRepository.save(exam);
-		double score = 0;
-		
-		 if (ids != null) {
-	            //è®¾ç½®examå’Œquestionçš„å…³è�”
+	public Exam insertExam(Exam exam) {
+		 Long[] ids = exam.getIds();
+//	        Exam insert = this.examRepository.save(exam);
+	        double score = 0;
+	        if (ids != null) {
+	            
 	            for (Long id : ids) {
-	                Exam exam = new Exam();
-	                exam.setExamId(exam.getExamId());
-	                exam.setQuestionId(id);
-	                examQuestionDao.insert(exam);
-	                //è®¾ç½®è¯•å�·çš„æ€»åˆ†
-	                Question question = questionDao.queryById(id);
-	                score += question.getScore();
+	                ExamQuestion examQuestion = new ExamQuestion();
+	                examQuestion.setExamId(exam.getExamId());
+	                examQuestion.setQuestionId(id);
+	                examQuestionRepository.save(examQuestion);
+	                
+	                Optional<Question> question = questionRepository.findById(id);
+	                score += question.get().getScore();
 	            }
 	        }
-	        //æ›´æ–°å…¶æ€»åˆ†
-	        examDao.updateScoreById(score, exam.getExamId());
+	      
+	        examRepository.save(exam);
 	        exam.setScore(score);
-	        //èŽ·å�–å�‚åŠ è€ƒè¯•çš„å­¦ç”Ÿçš„ä¿¡æ�¯
-	        Integer[] studentIds = exam.getStudentIds();
-	        if (studentIds != null) {
-	            for (Integer studentId : studentIds) {
-	                User examStudent = new User();
-	                examStudent.setExamId(exam.getExamId());
-	                examStudent.setStudentId(studentId);
-	                examStudentDao.insert(examStudent);
-	            }
-	        }
-	        return insert;
+//	     
+//	        Optional<User> studentIds = exam.;
+//	        if (studentIds != null) {
+//	            for (Integer studentId : studentIds) {
+//	                ExamStudent examStudent = new ExamStudent();
+//	                examStudent.setExamId(exam.getExamId());
+//	                examStudent.setStudentId(studentId);
+//	                examStudentDao.insert(examStudent);
+//	            }
+//	        }
+	        return exam;
 	}
 
 	@Override
@@ -116,9 +120,9 @@ public class ExamServiceImpl implements ExamService {
 			final Long id = (answer.getAnswerId());
 			if (answers.contains(id)) {
 				grade += step;
-				correctCount.addAll(id);
+//				correctCount.addAll(id);
 			} else {
-				incorrectCount.add(id);
+//				incorrectCount.add(id);
 			}
 		}
 		// fix for multi-answers questions

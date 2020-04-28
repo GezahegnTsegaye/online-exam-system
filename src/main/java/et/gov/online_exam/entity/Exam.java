@@ -57,5 +57,7 @@ public @Data class Exam {
 	private Integer grade;
 	
 	private Long[] ids;
+	
+	private String examCode;
 
 }
