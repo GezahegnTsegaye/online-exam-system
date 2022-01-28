@@ -1,0 +1,13 @@
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://127.0.0.1:5432/exam
+    username: online
+    password: admin
+    driverClassName: org.postgresql.Driver

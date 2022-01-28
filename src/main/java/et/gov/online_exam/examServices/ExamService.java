@@ -1,16 +1,18 @@
 package et.gov.online_exam.examServices;
 
-import java.util.List;
+import et.gov.online_exam.dal.dto.ExamQuestionDto;
+import et.gov.online_exam.dal.entity.ExamQuestion;
 
-import et.gov.online_exam.entity.Exam;
-import et.gov.online_exam.entity.Question;
+import javax.transaction.Transactional;
 
 public interface ExamService {
+    @Transactional
+    void insertExam(ExamQuestionDto examQuestionDto);
 
-	Exam getRandomExam();
+	/*ExamQuestion getRandomExam();
 
- Exam insertExam(Exam exam);
+    ExamQuestion insertExam(ExamQuestion exam);*/
 
-	List<Question> getQuestionsForExam(int examId);
+//	List<Question> getQuestionsForExam(int examId);
 
 }
