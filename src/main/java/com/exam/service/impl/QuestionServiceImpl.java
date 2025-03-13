@@ -1,12 +1,12 @@
-package et.gov.online_exam.examServices.impl;
+package com.exam.service.impl;
 
 
-import et.gov.online_exam.dal.dto.QuestionDto;
-import et.gov.online_exam.dal.entity.Question;
-import et.gov.online_exam.dal.mapper.QuestionMapper;
-import et.gov.online_exam.dal.repository.ExamQuestionRepository;
-import et.gov.online_exam.dal.repository.QuestionRepository;
-import et.gov.online_exam.examServices.QuestionService;
+import com.exam.dal.dto.QuestionDto;
+import com.exam.dal.entity.Question;
+import com.exam.dal.mapper.QuestionMapper;
+import com.exam.dal.repository.ExamRepository;
+import com.exam.dal.repository.QuestionRepository;
+import com.exam.service.QuestionService;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -17,12 +17,12 @@ public class QuestionServiceImpl implements QuestionService {
 
 
     private final QuestionRepository questionRepository;
-    private final ExamQuestionRepository examQuestionRepository;
+    private final ExamRepository examRepository;
     private final QuestionMapper questionMapper;
 
-    public QuestionServiceImpl(QuestionRepository questionRepository, ExamQuestionRepository examQuestionRepository, QuestionMapper questionMapper) {
+    public QuestionServiceImpl(QuestionRepository questionRepository, ExamRepository examRepository, QuestionMapper questionMapper) {
         this.questionRepository = questionRepository;
-        this.examQuestionRepository = examQuestionRepository;
+        this.examRepository = examRepository;
         this.questionMapper = questionMapper;
     }
 
