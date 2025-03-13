@@ -1,10 +1,10 @@
-package et.gov.online_exam.dal.mapper;
+package com.exam.dal.mapper;
 
 
-import et.gov.online_exam.dal.dto.RoleDto;
-import et.gov.online_exam.dal.dto.UserDto;
-import et.gov.online_exam.dal.entity.Role;
-import et.gov.online_exam.dal.entity.User;
+import com.exam.dal.dto.RoleDto;
+import com.exam.dal.dto.UserDto;
+import com.exam.dal.entity.Role;
+import com.exam.dal.entity.User;
 import org.mapstruct.Mapper;
 
 import java.util.Collection;
