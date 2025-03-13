@@ -1,7 +1,6 @@
-package et.gov.online_exam.examServices;
+package com.exam.service;
 
-import et.gov.online_exam.dal.entity.Answer;
-import org.springframework.web.bind.annotation.RequestBody;
+import com.exam.dal.entity.Answer;
 
 import java.util.List;
 

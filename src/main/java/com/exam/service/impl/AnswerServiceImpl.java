@@ -1,9 +1,9 @@
-package et.gov.online_exam.examServices.impl;
+package com.exam.service.impl;
 
 
-import et.gov.online_exam.dal.entity.Answer;
-import et.gov.online_exam.dal.repository.AnswerRepository;
-import et.gov.online_exam.examServices.AnswerService;
+import com.exam.dal.entity.Answer;
+import com.exam.dal.repository.AnswerRepository;
+import com.exam.service.AnswerService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

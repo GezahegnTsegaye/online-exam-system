@@ -1,4 +1,4 @@
-package et.gov.online_exam.controller;
+package com.exam.controller;
 
 public interface AnswerController {
 }

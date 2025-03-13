@@ -1,12 +1,12 @@
-package et.gov.online_exam.controller.impl;
+package com.exam.controller.impl;
 
 
-import et.gov.online_exam.controller.AnswerController;
-import et.gov.online_exam.dal.dto.AnswerDto;
-import et.gov.online_exam.dal.entity.Answer;
-import et.gov.online_exam.dal.mapper.AnswerMapper;
-import et.gov.online_exam.dal.mapper.UserMapper;
-import et.gov.online_exam.examServices.AnswerService;
+import com.exam.controller.AnswerController;
+import com.exam.dal.dto.AnswerDto;
+import com.exam.dal.entity.Answer;
+import com.exam.dal.mapper.AnswerMapper;
+import com.exam.dal.mapper.UserMapper;
+import com.exam.service.AnswerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
