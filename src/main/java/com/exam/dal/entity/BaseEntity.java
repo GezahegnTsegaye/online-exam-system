@@ -1,4 +1,4 @@
-package et.gov.online_exam.dal.entity;
+package com.exam.dal.entity;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

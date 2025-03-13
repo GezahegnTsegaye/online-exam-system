@@ -1,10 +1,8 @@
-package et.gov.online_exam.dal.entity;
+package com.exam.dal.entity;
 
 import javax.persistence.*;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.ArrayList;

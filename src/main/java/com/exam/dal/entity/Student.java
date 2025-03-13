@@ -1,4 +1,4 @@
-package et.gov.online_exam.dal.entity;
+package com.exam.dal.entity;
 
 import lombok.Data;
 
@@ -16,6 +16,6 @@ public class Student implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "examQuestionId")
-    private ExamQuestion examQuestion;
+    private Exam exam;
 
 }
