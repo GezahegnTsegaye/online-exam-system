@@ -1,4 +1,4 @@
-package et.gov.online_exam.dal.dto;
+package com.exam.dal.dto;
 
 import lombok.Data;
 

@@ -1,28 +1,23 @@
-package et.gov.online_exam.examServices.impl;
-
-import java.util.List;
-import java.util.Optional;
+package com.exam.service.impl;
 
 import javax.transaction.Transactional;
 
-import et.gov.online_exam.dal.dto.ExamQuestionDto;
-import et.gov.online_exam.dal.dto.QuestionDto;
-import et.gov.online_exam.dal.entity.ExamQuestion;
-import et.gov.online_exam.dal.entity.Question;
-import et.gov.online_exam.dal.mapper.ExamQuestionMapper;
+import com.exam.dal.dto.ExamQuestionDto;
+import com.exam.dal.entity.Exam;
+import com.exam.dal.mapper.ExamQuestionMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import et.gov.online_exam.examServices.ExamService;
-import et.gov.online_exam.dal.repository.AnswerRepository;
-import et.gov.online_exam.dal.repository.ExamQuestionRepository;
-import et.gov.online_exam.dal.repository.QuestionRepository;
+import com.exam.service.ExamService;
+import com.exam.dal.repository.AnswerRepository;
+import com.exam.dal.repository.ExamRepository;
+import com.exam.dal.repository.QuestionRepository;
 
 @Service
 public class ExamServiceImpl implements ExamService {
 
 	@Autowired
-	private ExamQuestionRepository examRepository;
+	private ExamRepository examRepository;
 
 	@Autowired
 	private QuestionRepository questionRepository;
@@ -31,7 +26,7 @@ public class ExamServiceImpl implements ExamService {
 	private AnswerRepository answerRepository;
 
 	@Autowired
-	private ExamQuestionRepository examQuestionRepository;
+	private ExamRepository examRepository;
 	@Autowired
 	private ExamQuestionMapper examQuestionMapper;
 
@@ -51,9 +46,9 @@ public class ExamServiceImpl implements ExamService {
 	@Override
 	@Transactional
 	public void insertExam(ExamQuestionDto examQuestionDto) {
-		ExamQuestion examQuestion = examQuestionMapper.toExamQuestion(examQuestionDto);
-		if(examQuestion != null){
-		examRepository.save(examQuestion);}
+		Exam exam = examQuestionMapper.toExamQuestion(examQuestionDto);
+		if(exam != null){
+		examRepository.save(exam);}
 
 	}
 

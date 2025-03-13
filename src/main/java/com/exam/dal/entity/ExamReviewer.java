@@ -1,4 +1,4 @@
-package et.gov.online_exam.dal.entity;
+package com.exam.dal.entity;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -6,9 +6,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @Entity
@@ -41,5 +39,5 @@ public class ExamReviewer {
 	private Question question;
 
 	@OneToMany(mappedBy="examReviewer", cascade = CascadeType.ALL)
-	private List<ExamQuestion> examsExamQuestions = new ArrayList<>();
+	private List<Exam> examsExams = new ArrayList<>();
 }

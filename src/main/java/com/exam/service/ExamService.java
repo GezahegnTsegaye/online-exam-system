@@ -1,7 +1,6 @@
-package et.gov.online_exam.examServices;
+package com.exam.service;
 
-import et.gov.online_exam.dal.dto.ExamQuestionDto;
-import et.gov.online_exam.dal.entity.ExamQuestion;
+import com.exam.dal.dto.ExamQuestionDto;
 
 import javax.transaction.Transactional;
 

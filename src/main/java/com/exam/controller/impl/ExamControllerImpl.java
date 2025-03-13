@@ -1,12 +1,7 @@
-package et.gov.online_exam.controller.impl;
+package com.exam.controller.impl;
 
-import et.gov.online_exam.controller.ExamController;
-import et.gov.online_exam.dal.entity.ExamReviewer;
-import et.gov.online_exam.dal.repository.ExamReviewerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.exam.controller.ExamController;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "api/v1")

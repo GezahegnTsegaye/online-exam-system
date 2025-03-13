@@ -1,4 +1,4 @@
-package et.gov.online_exam;
+package com.exam;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
