@@ -1,4 +1,4 @@
-package com.exam.dal.entity;
+package com.exam.dal.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
