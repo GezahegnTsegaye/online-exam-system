@@ -3,7 +3,7 @@ package com.exam.service;
 import com.exam.dal.dto.AuthenticationRequest;
 import com.exam.dal.dto.AuthenticationResponse;
 import com.exam.dal.dto.RegisterRequest;
-import com.exam.dal.entity.User;
+import com.exam.dal.model.User;
 import com.exam.dal.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;

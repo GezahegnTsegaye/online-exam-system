@@ -1,6 +1,5 @@
 package com.exam.service;
 
-
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -19,11 +18,16 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    @Value("${jwt.secret}")
-    private String secretKey;
+    // Use constructor-based injection for configuration values to avoid issues with field injection
+    private final String secretKey;
+    private final long jwtExpiration;
 
-    @Value("${jwt.expiration}")
-    private long jwtExpiration;
+    public JwtService(
+            @Value("${security.jwt.secret-key}") String secretKey,
+            @Value("${security.jwt.expiration}") long jwtExpiration) {
+        this.secretKey = secretKey;
+        this.jwtExpiration = jwtExpiration;
+    }
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
