@@ -1,10 +1,9 @@
 package com.exam.dal.repository;
 
-import com.exam.dal.entity.Course;
+import com.exam.dal.model.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 
-import com.exam.dal.entity.Exam;
+import com.exam.dal.model.Exam;
 
 import java.util.List;
 
