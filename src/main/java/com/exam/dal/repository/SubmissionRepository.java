@@ -1,8 +1,8 @@
 package com.exam.dal.repository;
 
-import com.exam.dal.entity.Exam;
-import com.exam.dal.entity.Submission;
-import com.exam.dal.entity.User;
+import com.exam.dal.model.Exam;
+import com.exam.dal.model.Submission;
+import com.exam.dal.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
