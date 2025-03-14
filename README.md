@@ -192,7 +192,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👨‍💻 Authors and Contributors
 
-- **Gezahegn** - *Initial work* - [YourGitHub](https://github.com/GezahegnTsegaye)
+- **Gezahegn** - *Initial work* - [GitHub](https://github.com/GezahegnTsegaye)
 
 ## 🙏 Acknowledgments
 
