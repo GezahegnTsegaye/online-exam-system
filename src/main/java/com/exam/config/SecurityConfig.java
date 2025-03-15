@@ -52,9 +52,13 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(publicUrls).permitAll()
                         .requestMatchers(
-                                "/swagger-ui.html",
+                                "/v3/api-docs/**",
+                                "/v3/api-docs",
                                 "/swagger-ui/**",
-                                "/v3/api-docs/**").permitAll()
+                                "/swagger-ui.html",
+                                "/swagger-resources/**",
+                                "/webjars/**").permitAll()
+                        .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/admin/**").hasAuthority("ADMIN")
                         .requestMatchers("/api/teacher/**").hasAuthority("TEACHER")
                         .requestMatchers("/api/student/**").hasAuthority("STUDENT")
